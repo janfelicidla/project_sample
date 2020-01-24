@@ -3,6 +3,6 @@
 @section('content')
     <h1>{{$title}}</h1>
     <p>
-    sample changes.
+    sample changes.aasdasd
     </p>
 @endsection
