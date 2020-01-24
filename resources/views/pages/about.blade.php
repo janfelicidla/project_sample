@@ -4,7 +4,7 @@
     <h1><?php echo $title ?></h1>
     <p>
 
-        Hello
+        jm kay gwapo
 
     </p>
 @endsection
