@@ -10,7 +10,7 @@
 
             </div>
         @endforeach
-        {{$posts->links()}};
+        {{$posts->links()}}
     @else
          <p>No Post Found</p>        
     @endif

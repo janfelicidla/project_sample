@@ -4,7 +4,7 @@
     <h1><?php echo $title ?></h1>
     <p>
 
-        jm kay gwapo
+        this is the about page.
 
     </p>
 @endsection
