@@ -24,9 +24,5 @@ class PagesController extends Controller
         );
         return view('pages.services')->with($data);
     }
-    
-    public function user(){
-        $title = "User CRUD";
-        return view('pages.user')->with('title', $title);
-    }
+
 }

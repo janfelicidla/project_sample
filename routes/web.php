@@ -17,9 +17,10 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-Route::get('/user', 'PagesController@user');
 
 Route::resource('/posts','PostsController');
+
+Route::resource('/user','UsersController');
 
 /* Route::get('/about', function () {
     return view('pages.about');
