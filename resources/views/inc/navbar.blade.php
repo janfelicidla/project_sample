@@ -19,5 +19,8 @@
     <ul class='nav navbar-nav navbar-right'>
        <li><a href='/posts/create'>Create Post</a></li>
     </ul>
+    <ul class='navbar-nav'>
+       <li class='nav-item'><a class="nav-link" href='/user'>User</a></li>
+    </ul>
   </div>
 </nav>
