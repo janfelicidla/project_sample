@@ -18,7 +18,7 @@
                 <td>{{$user->firs_name}}</td>
                 <td>{{$user->last_name}}</td>
                 <td>{{$user->address}}</td>
-                <td><a href="#" class="btn btn-info">Edit</a> | <a href="#" class="btn btn-danger">Delete</a></td>
+                <td><a href="user/{{$user->id}}/edit" class="btn btn-info">Edit</a> | <a href="user/destroy" class="btn btn-danger">Delete</a></td>
             </tr>
             @endforeach
             </tbody>

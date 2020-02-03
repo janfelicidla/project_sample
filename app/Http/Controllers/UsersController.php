@@ -14,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $userss = User::all();
-        return view('users.index')->with('users', $userss);
+        $users = User::all();
+        return view('users.index')->with(compact('users'));
     }
 
     /**
@@ -25,7 +25,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $user = new User;
+        return view('users.create')->with('users', $user);
     }
 
     /**
@@ -36,6 +37,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
         $user = new User;
         $user->username = $request->input('username');
         $user->password = $request->input('password');
@@ -44,7 +50,7 @@ class UsersController extends Controller
         $user->address = $request->input('address');
         $user->save();
 
-        return redirect('/user')->with('success','User success added.');;
+        return redirect('/user')->with('success','User added success.');;
     }
 
     /**
@@ -55,7 +61,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+        return view('users.show')->with('users', $users);
     }
 
     /**
@@ -66,7 +73,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::find($id);
+        return view('users.edit')->with('users', $users);
     }
 
     /**
@@ -78,7 +86,20 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        $users = User::find($id);
+        $users->username = $request->input('username');
+        $users->password = $request->input('password');
+        $users->firs_name = $request->input('firs_name');
+        $users->last_name = $request->input('last_name');
+        $users->address = $request->input('address');
+        $users->save();
+
+        return redirect('/user')->with('success', 'User update seccess.');
     }
 
     /**
@@ -89,6 +110,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::find($id);
+        $users->delete();
+
+        return redirect('/user')->with('success','User Removed.');
+      // return redirect('/user')->with('danger','User successfully deleted.');;
     }
 }

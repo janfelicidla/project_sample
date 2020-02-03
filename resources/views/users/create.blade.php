@@ -10,7 +10,7 @@
         </div>
         <div class='form-group col-lg-4'>
             {{form::label('password','Password')}}
-            {{form::text('password', '', ['class'=>'form-control', 'placeholder' => 'Password'])}}
+            {{form::password('password', ['class'=>'form-control', 'placeholder' => 'Password'])}}
         </div>
         <div class='form-group col-lg-4'>
             {{form::label('firs_name','First_Name')}}
