@@ -18,7 +18,10 @@
                 <td>{{$user->firs_name}}</td>
                 <td>{{$user->last_name}}</td>
                 <td>{{$user->address}}</td>
-                <td><a href="user/{{$user->id}}/edit" class="btn btn-info">Edit</a> | <a href="user/destroy" class="btn btn-danger">Delete</a></td>
+                <td><a href="user/{{$user->id}}/edit" class="btn btn-info">Edit</a> | {!! Form::open(['action'=>['UsersController@destroy', $user->id], 'method' => 'POST'])!!}
+        {{Form::hidden('_method', 'DELETE')}}
+        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+    {!! Form::close()!!}</td>
             </tr>
             @endforeach
             </tbody>
