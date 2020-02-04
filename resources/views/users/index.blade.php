@@ -3,7 +3,7 @@
 @section('content')
     <h1>Users</h1>
     @if(count($users) > 0)
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <th>Username</th>
                 <th>First_Name</th>
@@ -18,7 +18,7 @@
                 <td>{{$user->firs_name}}</td>
                 <td>{{$user->last_name}}</td>
                 <td>{{$user->address}}</td>
-                <td><a href="#" class="btn btn-info">Edit</a> | <a href="#" class="btn btn-danger">Delete</a></td>
+            <td><a href="/users/{{$user->id}}/edit" class="btn btn-info">Edit</a> | <a href="#" class="btn btn-danger">Delete</a></td>
             </tr>
             @endforeach
             </tbody>

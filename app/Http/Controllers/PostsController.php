@@ -55,7 +55,7 @@ class PostsController extends Controller
         $post->body = $request->input('body');
         $post->save();
 
-        return redirect('/posts')->with('success','Post Created');
+        return redirect('/posts')->with('success', 'Post Created');
     }
 
     /**
@@ -68,7 +68,7 @@ class PostsController extends Controller
     {
         //
         $post = Post::find($id);
-        return view('posts.show')->with('post',$post);
+        return view('posts.show')->with('post', $post);
     }
 
     /**

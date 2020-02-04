@@ -14,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $userss = User::all();
-        return view('users.index')->with('users', $userss);
+        $users = User::all();
+        return view('users.index')->with('users', $users);
     }
 
     /**
@@ -36,6 +36,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required',
+            'firs_name' => 'required',
+            'last_name' => 'required',
+            'address' => 'required'
+        ]);
+
         $user = new User;
         $user->username = $request->input('username');
         $user->password = $request->input('password');
@@ -44,7 +53,7 @@ class UsersController extends Controller
         $user->address = $request->input('address');
         $user->save();
 
-        return redirect('/user')->with('success','User success added.');;
+        return redirect('/user')->with('success','User success added.');
     }
 
     /**
@@ -56,6 +65,7 @@ class UsersController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -65,8 +75,9 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $user = User::find($id);
+        return view('users.edit')->with('user',$user);
     }
 
     /**
