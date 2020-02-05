@@ -12,11 +12,11 @@
         </div>
         <div class='form-group col-lg-4'>
             {{form::label('password','Password')}}
-            {{form::password('password', $user->password ['class'=>'form-control', 'placeholder' => 'Password'])}}
+            {{form::text('password', $user->password, ['class'=>'form-control', 'placeholder' => 'Password'])}}
         </div>
         <div class='form-group col-lg-4'>
             {{form::label('firs_name','First_Name')}}
-            {{form::text('firs_name', $user->firs_name, ['class'=>'form-control', 'placeholder' => 'Firs_Name'])}}
+            {{form::text('firs_name', $user->firs_name, ['class'=>'form-control', 'placeholder' => 'First_Name'])}}
         </div><div class='form-group col-lg-4'>
             {{form::label('last_name','Last_Name')}}
             {{form::text('last_name', $user->last_name, ['class'=>'form-control', 'placeholder' => 'Last_name'])}}
